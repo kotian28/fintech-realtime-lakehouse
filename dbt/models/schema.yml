@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: stg_transactions
+    columns:
+      - name: currency
+        data_tests:
+          - accepted_values: {values: ['USD', 'EUR', 'GBP', 'INR', 'JPY']}
+  - name: merchant_metrics
+    columns:
+      - name: merchant_id
+        data_tests: [unique, not_null]
+  - name: fraud_alerts
+    columns:
+      - name: transaction_id
+        data_tests: [unique, not_null]

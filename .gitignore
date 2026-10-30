@@ -1,0 +1,12 @@
+data/*
+!data/.gitkeep
+__pycache__/
+*.pyc
+
+.terraform/
+*.tfstate*
+.env
+
+dbt/.user.yml
+dbt/target/
+dbt/logs/

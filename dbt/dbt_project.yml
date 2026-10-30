@@ -1,0 +1,8 @@
+name: fintech
+version: "1.0"
+profile: fintech
+model-paths: ["models"]
+test-paths: ["tests"]
+models:
+  fintech:
+    staging: {+materialized: view}

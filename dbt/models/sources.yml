@@ -1,0 +1,15 @@
+version: 2
+sources:
+  - name: lake
+    tables:
+      - name: silver_transactions
+        meta:
+          external_location: "delta_scan('{{ env_var('LAKE_ROOT', '/opt/airflow/data') }}/silver/transactions')"
+        columns:
+          - name: transaction_id
+            data_tests: [unique, not_null]
+          - name: amount
+            data_tests: [not_null]
+      - name: quarantine_transactions
+        meta:
+          external_location: "delta_scan('{{ env_var('LAKE_ROOT', '/opt/airflow/data') }}/quarantine/transactions')"

@@ -1,0 +1,8 @@
+fintech:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/lakehouse.duckdb
+      extensions: [delta]
+      threads: 1
